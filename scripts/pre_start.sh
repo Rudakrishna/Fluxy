@@ -139,10 +139,6 @@ else
     echo "SYNC: Existing version is newer than the template version, not syncing!"
 fi
 
-# Start application manager
-cd /app-manager
-npm start > /workspace/logs/app-manager.log 2>&1 &
-
 if [[ ${DISABLE_AUTOLAUNCH} ]]
 then
     echo "Auto launching is disabled so the applications will not be started automatically"
