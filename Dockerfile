@@ -12,16 +12,6 @@ ARG INDEX_URL
 ARG COMFYUI_COMMIT
 RUN /install_comfyui.sh
 
-# Install Application Manager
-ARG APP_MANAGER_VERSION
-RUN /install_app_manager.sh
-COPY app-manager/config.json /app-manager/public/config.json
-COPY --chmod=755 app-manager/*.sh /app-manager/scripts/
-
-# Install CivitAI Model Downloader
-ARG CIVITAI_DOWNLOADER_VERSION
-RUN /install_civitai_model_downloader.sh
-
 # Cleanup installation scripts
 RUN rm -f /install_*.sh
 
